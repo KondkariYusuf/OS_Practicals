@@ -1,16 +1,17 @@
-pages = [1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5]
-frame_size = 3
-frames = []
-page_faults = 0
-
+memory=[]
+pages=[1,3,2,4,1,2]
+size=3
+hit=miss=0
 for page in pages:
-    if page not in frames:
-        if len(frames) < frame_size:
-            frames.append(page)
-        else:
-            frames.pop(0)
-            frames.append(page)
-        page_faults += 1
-    print(f"Page: {page} -> Frames: {frames}")
-
-print("\nTotal Page Faults:", page_faults)
+    if page in memory:
+        hit += 1
+        print(f'HIT | PAGE {page}')
+    else:
+        miss += 1
+        if len(memory) == size:
+            memory.pop(0)
+        memory.append(page)
+        print(f'MISS | PAGE {page}')
+    print(memory)
+print(f'Hit Count: {hit}')
+print(f'Miss Count: {miss}')
