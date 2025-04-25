@@ -14,7 +14,7 @@ for i in range(len(processes)):
         
 # Print allocation result
 for i in range(len(processes)):
-    print(f"Process {i+1} (Size {processes[i]}) -> ", end="")
+    print(f"Process {i+1} -> ", end="")
     if allocation[i] != -1:
         print(f"Block {allocation[i]+1}")
     else:
