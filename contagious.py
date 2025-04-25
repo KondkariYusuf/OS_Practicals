@@ -1,4 +1,4 @@
-disk = [None] * 20  # 20 blocks
+disk = [None] * 20  
 files = [("file1", 2, 5), ("file2", 8, 4), ("file3", 17, 4)]
 
 for name, start, length in files:
@@ -9,7 +9,6 @@ for name, start, length in files:
     else:
         print(f"{name} not allocated")
 
-# Show final disk status
 print("\nDisk status:")
 for i in range(len(disk)):
     print(f"Block {i}: {disk[i] if disk[i] else 'Free'}")
